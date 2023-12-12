@@ -34,10 +34,10 @@ jobs:
       - uses: tauri-apps/tauri-action@v0
         id: tauri
         env:
-          SIGN: 1
-          SIGN_KEY: ${{ secrets.GPG_SIGNING_KEY_ID }}
-          APPIMAGETOOL_SIGN_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSPHRASE }}
-          APPIMAGETOOL_FORCE_SIGN: true
+          # SIGN: 0
+          # SIGN_KEY: ${{ secrets.GPG_SIGNING_KEY_ID }}
+          # APPIMAGETOOL_SIGN_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSPHRASE }}
+          # APPIMAGETOOL_FORCE_SIGN: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@v3
