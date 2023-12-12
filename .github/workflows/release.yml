@@ -21,7 +21,6 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
-      - run: cargo install tauri-cli
 
       - name: linux signing key setup
         if: matrix.platform == 'ubuntu-20.04'
