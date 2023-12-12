@@ -26,7 +26,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: "yarn"
-          node-version-file: ".tool-versions"
 
       - name: linux signing key setup
         if: matrix.platform == 'ubuntu-20.04'
