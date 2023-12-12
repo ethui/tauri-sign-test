@@ -30,18 +30,17 @@ jobs:
 
       - uses: crazy-max/ghaction-import-gpg@v6
         with:
-          gpg_private_key: ${{ secrets.GPG_SIGNING_KEY }}
-          passphrase: ${{ secrets.GPG_SIGNING_KEY_PASSPHRASE }}
-          fingerprint: ${{ secrets.GPG_SIGNING_KEY_ID }}
+          gpg_private_key: ${{ secrets.TEST_KEY }}
+          passphrase: ${{ secrets.TEST_PASS }}
+          fingerprint: ${{ secrets.TEST_KEY_ID }}
       - run: gpg --list-keys
 
       - uses: tauri-apps/tauri-action@v0
         id: tauri
         env:
           SIGN: 1
-          SIGN_KEY: ${{ secrets.GPG_SIGNING_KEY_ID }}
-          APPIMAGETOOL_SIGN_PASSPHRASE: ${{ secrets.GPG_SIGNING_KEY_PASSPHRASE }}
-          # APPIMAGETOOL_FORCE_SIGN: true
+          SIGN_KEY: ${{ secrets.TEST_KEY_ID }}
+          APPIMAGETOOL_SIGN_PASSPHRASE: ${{ secrets.TEST_PASS }} 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-artifact@v3
