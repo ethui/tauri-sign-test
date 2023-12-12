@@ -36,7 +36,8 @@ jobs:
 
       - run: gpg --list-keys
 
-      - run: cargo tauri build
+      - uses: tauri-apps/tauri-action@v0
+        id: tauri
         env:
           SIGN: 1
           SIGN_KEY: ${{ secrets.GPG_SIGNING_KEY_ID }}
