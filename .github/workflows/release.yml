@@ -24,8 +24,6 @@ jobs:
       - run: npm install -g yarn
 
       - uses: actions/setup-node@v3
-        with:
-          cache: "yarn"
 
       - name: linux signing key setup
         if: matrix.platform == 'ubuntu-20.04'
